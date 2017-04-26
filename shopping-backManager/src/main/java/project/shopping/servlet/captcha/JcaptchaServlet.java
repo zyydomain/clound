@@ -42,6 +42,7 @@ public class JcaptchaServlet extends HttpServlet {
 		try {
 
 			String captchaId = request.getSession().getId();
+			// 放入session中
 			BufferedImage challenge = captchaService.getImageChallengeForID(captchaId, request.getLocale());
 			ImageIO.write(challenge, CAPTCHA_IMAGE_FORMAT, jpegOutputStream);
 		} catch (IllegalArgumentException e) {

@@ -36,15 +36,13 @@ body {
 </head>
 <body>
 <div class="container">
-	<form id="jvForm" name="jvForm" action="login" method="post" onsubmit="return login();">
-		<table width="750" border="0" align="center" cellpadding="0"
-			cellspacing="0">
+	<form id="jvForm" name="jvForm" action="login.shop" method="post" onsubmit="return login();">
+		<table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
 			<tr>
 				<td height="200">&nbsp;</td>
 			</tr>
 			<tr>
-				<td><table width="100%" border="0" cellspacing="0"
-						cellpadding="0">
+				<td><table width="100%" border="0" cellspacing="0" cellpadding="0">
 						<tr>
 							<td width="423" height="280" valign="top" ><table
 									width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -59,7 +57,6 @@ body {
 									</tr>
 									<tr>
 										<td>
-											
 											<table width="100%" border="0" align="center" cellpadding="0"
 												cellspacing="5">
 												<tr>
@@ -74,8 +71,7 @@ body {
 												<tr>
 													<td height="40" align="right"><strong>验证码：</strong></td>
 													<td><input maxlength="4" style="width:60px; margin-bottom: 10px;" name="captcha" type="text" id="captcha" class="input"  />
-													<img style="margin-top: -5px;" src="<%=path %>/captcha.svl" onclick="this.src='<%=request.getContextPath() %>/captcha.svl?d='+new Date()*1" valign="bottom" alt="点击更新" title="点击更新" />
-													<span style="width:100px; color:red; display:none;">${msg}</span>
+													<img style="margin-top: -5px;cursor:pointer" src="<%=path %>/captcha.svl" onclick="this.src='<%=request.getContextPath() %>/captcha.svl?d='+new Date()*1" valign="bottom" alt="点击更新" title="点击更新" />
 													</td>
 												</tr>
 												<tr>
@@ -105,7 +101,6 @@ function login(){
         alert("验证码不能为空！");
         return false;
     } 
-<!--    jvForm.password.value=encryptByDES(jvForm.password.value, jvForm.publickey.value);-->
 }
 var msg="${message}";
 if(msg){
