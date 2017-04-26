@@ -7,13 +7,9 @@ String path = request.getContextPath()+"";
 %>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>英科后台管理系统V2.0</title>
+<title>后台管理系统</title>
 <link rel='icon' href='<%=path %>/admin-favicon.ico' type=‘image/x-ico’ />
-<!--<script type="text/javascript" src="<%=path %>/resources/js/jquery.js"></script>-->
 <script type="text/javascript" src="<%=path %>/resources/js/DD_belatedPNG.js"></script>
-<!--<script type="text/javascript" src="<%=path %>/common/js/desencrypt.js"></script>-->
-<!--<script type="text/javascript" src="<%=path %>/common/js/tripledes.js"></script>-->
-<!--<script type="text/javascript" src="<%=path %>/common/js/mode-ecb.js"></script>-->
 
 <script>
 DD_belatedPNG.fix('.container,.sub,background');
@@ -59,7 +55,7 @@ body {
 							<td width="40" align="center" valign="bottom"></td>
 							<td valign="top" style="width:362px;heigth:340px; background-image:url('<%=path %>/common/back/images/dl_bg.png');" ><table width="100%" border="0" cellspacing="0" cellpadding="0">
 									<tr>
-										<td height="50" align="center" ><h1>市场部系统</h1><%-- <img src="<%=path %>/common/back/images/ltitle.png" /> --%></td>
+										<td height="50" align="center" ><h1>管理系统</h1></td>
 									</tr>
 									<tr>
 										<td>
@@ -82,13 +78,9 @@ body {
 													<span style="width:100px; color:red; display:none;">${msg}</span>
 													</td>
 												</tr>
-												<%-- <tr>
-													<td><a href="<%=path %>/back/user/updateUserPassword?type=toJsp&sign=1"  style="margin-left:90px;color: red">重置密码</a></td>
-													<td><a href="<%=path %>/back/user/updateUserPassword?type=toJsp&sign=1"  style="margin-left:90px;color: red">找回密码</a></td>
-												</tr> --%>
 												<tr>
 													<td height="80" colspan="2" align="center" class="sub">
-													<input type="image" src="<%=path %>/common/back/images/login.png" name="submit" /><!-- &nbsp; &nbsp;&nbsp; --></td>
+													<input type="image" src="<%=path %>/common/back/images/login.png" name="submit" /></td>
 												</tr>
 											</table>
 										</td>

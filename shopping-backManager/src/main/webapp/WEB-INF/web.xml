@@ -26,22 +26,14 @@
     <servlet-name>back</servlet-name>
     <url-pattern>/back/*</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <servlet-name>DruidStatView</servlet-name>
-    <servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
-    <init-param>
-      <param-name>loginUsername</param-name>
-      <param-value>administrator</param-value>
-    </init-param>
-    <init-param>
-      <param-name>loginPassword</param-name>
-      <param-value>rb_p2p_druid</param-value>
-    </init-param>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>DruidStatView</servlet-name>
-    <url-pattern>/admin/p2p/druid/*</url-pattern>
-  </servlet-mapping>
+	 <servlet>
+	 	<servlet-name>captcha</servlet-name>
+	 	<servlet-class>project.shopping.servlet.captcha.JcaptchaServlet</servlet-class>
+	 </servlet>
+	 <servlet-mapping>
+	 	<servlet-name>captcha</servlet-name>
+	 	<url-pattern>/captcha.svl</url-pattern>
+	 </servlet-mapping>
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
@@ -74,32 +66,4 @@
     <error-code>500</error-code>
     <location>/500.html</location>
   </error-page>
-  <mime-mapping>
-    <extension>rar</extension>
-    <mime-type>application/zip</mime-type>
-  </mime-mapping>
-  <mime-mapping>
-    <extension>doc</extension>
-    <mime-type>application/zip</mime-type>
-  </mime-mapping>
-  <mime-mapping>
-    <extension>ppt</extension>
-    <mime-type>application/zip</mime-type>
-  </mime-mapping>
-  <mime-mapping>
-    <extension>txt</extension>
-    <mime-type>application/zip</mime-type>
-  </mime-mapping>
-  <mime-mapping>
-    <extension>pdf</extension>
-    <mime-type>application/zip</mime-type>
-  </mime-mapping>
-  <mime-mapping>
-    <extension>xls</extension>
-    <mime-type>application/zip</mime-type>
-  </mime-mapping>
-  <mime-mapping>
-    <extension>wps</extension>
-    <mime-type>application/zip</mime-type>
-  </mime-mapping>
 </web-app>
