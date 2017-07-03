@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:if test="${not empty page}">
 
 <!--targetTypeParam 修复对话框中分页正常使用。  updated by LTQ, date:2014.11.14  -->

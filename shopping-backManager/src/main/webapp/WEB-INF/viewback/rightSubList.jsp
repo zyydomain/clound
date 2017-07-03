@@ -13,7 +13,7 @@
 							</c:if><c:if test="${fn:contains(rightsub.moduleUrl,'?')}">
 								href="${rightsub.moduleUrl}&myId=${rightsub.id}&parentId=${rightsub.moduleParentId}"  
 							</c:if>
-							  ${rightsub.moduleStyle }>
+							  ${rightsub.moduleStyle}>
 					<span>${rightsub.moduleName}</span> </a>
 			</li>
 			<li class="line">

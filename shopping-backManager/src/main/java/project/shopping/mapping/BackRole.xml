@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="project.shopping.dao.BackRoleDao">
+	<resultMap id="BaseResultMap" type="project.shopping.pojo.BackRole">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="role_name" property="roleName" jdbcType="VARCHAR" />
+		<result column="role_addtime" property="roleAddTime" jdbcType="TIMESTAMP" />
+		<result column="role_status" property="roleStatus" jdbcType="INTEGER" />
+		<result column="role_super" property="roleSuper" jdbcType="INTEGER" />
+		<result column="role_addip" property="roleAddIp" jdbcType="VARCHAR" />
+		<result column="role_summary" property="roleSummary" jdbcType="VARCHAR" />
+		<result column="role_remark" property="roleRemark" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="findAllTree" resultMap="BaseResultMap" parameterMap="Map">
+		SELECT 
+			bu.id ,
+			bu.role_summary as title,
+			bu.role_super as pid,
+		from tb_back_role bu;
+	</select>
+</mapper>

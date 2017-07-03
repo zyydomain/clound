@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="project.shopping.dao.OperatorLogDao">
+	<resultMap id="BaseResultMap" type="project.shopping.pojo.OperatorLog">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="log_userid" property="logUserid" jdbcType="VARCHAR" />
+		<result column="operator_return" property="operatorReturn" jdbcType="VARCHAR" />
+		<result column="operator_title" property="operatorTitle" jdbcType="VARCHAR" />
+		<result column="operator_ip" property="operatorIp" jdbcType="VARCHAR" />
+		<result column="operator_params" property="operatorParams" jdbcType="VARCHAR" />
+		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+	<!-- 添加 -->
+	<insert id="addBackLog" parameterType="project.shopping.pojo.OperatorLog">
+		insert into tb_operator_log
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="logUserid != null">
+				log_userid,
+			</if>
+			<if test="operatorReturn != null">
+				operator_return,
+			</if>
+			<if test="operatorTitle != null">
+				operator_title,
+			</if>
+			<if test="operatorIp != null">
+				operator_ip,
+			</if>
+			<if test="operatorCategory != null">
+				operator_category,
+			</if>
+			<if test="operatorStatus != null">
+				operator_status,
+			</if>
+			<if test="operatorParams != null">
+				operator_params,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="logUserid != null">
+				#{logUserid,jdbcType=VARCHAR},
+			</if>
+			<if test="operatorReturn != null">
+				#{operatorReturn,jdbcType=VARCHAR},
+			</if>
+			<if test="operatorTitle != null">
+				#{operatorTitle,jdbcType=VARCHAR},
+			</if>
+			<if test="operatorIp != null">
+				#{operatorIp,jdbcType=VARCHAR},
+			</if>
+			<if test="operatorCategory != null">
+				#{operatorCategory,jdbcType=INTEGER},
+			</if>
+			<if test="operatorStatus != null">
+				#{operatorStatus,jdbcType=INTEGER},
+			</if>
+			<if test="operatorParams != null">
+				#{operatorParams,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+</mapper>

@@ -21,5 +21,17 @@
 		<property name="suffix" value=".jsp" />
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
 	</bean>
-	
+	<!-- 适配器 -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+	<!-- 注解扫描 -->
+	<context:component-scan base-package="project.shopping.controller"/>
+	<!-- 注解映射 -->
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/module/**" />
+			<mvc:mapping path="/index.shop" />
+			<bean class="project.shopping.interceptor.BackInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
 </beans>

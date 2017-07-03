@@ -17,15 +17,12 @@
 					    	 ${ModuleList }
 					     </li>
 					     </ul>
-					     
 					</div>
 				</c:if>
 				<div layoutH="14" id="moduleBox" class="unitBox" style="background:#fff;">
-					<%--<form id="pagerForm" onsubmit="return divSearch(this, 'moduleBox')"
-					action="xxx?myId=${params.myId}" method="post">--%>
 					
 					<div class="pageContent">
-						<jsp:include page="${BACK_URL}/rightSubList">
+						<jsp:include page="${path }/back/module/rightSubList.shop">
 							<jsp:param value="${params.myId}" name="parentId"/>
 						</jsp:include>
 						<table class="list" width="100%" layoutH="70">
@@ -65,12 +62,9 @@
 						<c:set var="pagedRel" value="moduleBox"></c:set>
 						<%@ include file="../page.jsp" %>
 					</div>
-					<%--</form>--%>
 				</div>
 				
 			</div>
-			
-			
 		</div>
 		<div class="tabsFooter">
 			<div class="tabsFooterContent"></div>

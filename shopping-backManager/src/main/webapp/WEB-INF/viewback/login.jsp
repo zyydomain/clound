@@ -37,6 +37,7 @@ body {
 <body>
 <div class="container">
 	<form id="jvForm" name="jvForm" action="login.shop" method="post" onsubmit="return login();">
+		<input type="hidden" name="returnUrl" value="${returnUrl}" />
 		<table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
 			<tr>
 				<td height="200">&nbsp;</td>

@@ -6,14 +6,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>后台管理系统</title>
 <style type="text/css">
-	#header {
-		height: 50px/* 新修改首页 */
-	}
-	#leftside,#container,#splitBar,#splitBarProxy {
-		top: px/* 新修改首页 */
-	}
-</style>
+#header {
+	height: 85px
+}
 
+#leftside,#container,#splitBar,#splitBarProxy {
+	top: 90px
+}
+</style>
 <script type="text/javascript">
 $(function(){
 	DWZ.init("${path}/resources/dwz.frag.xml",
@@ -61,8 +61,18 @@ $(function(){
 					<li theme="azure"><div>天蓝</div></li>
 				</ul>
 			</div>
+ 			<div id="navMenu">
+				<ul>
+					<c:forEach items="${menuModuleList}" var="item" varStatus="count">
+					<li <c:if test="${count.count==1}">  class="selected" </c:if> >
+							<a href="module/${item.moduleUrl}?myId=${item.id}">
+								<span>${item.moduleName}</span>
+							</a>
+					</li>
+					</c:forEach>
+				</ul>
+			</div> 
 		</div>
-
 		<div id="leftside">
 			<div id="sidebar_s">
 				<div class="collapse">
@@ -123,9 +133,9 @@ $(function(){
 				<div class="tabsPageHeader">
 					<div class="tabsPageHeaderContent">
 						<!-- 显示左右控制时添加 class="tabsPageHeaderMargin" -->
-						<ul class="navTab-tab">
+						<ul class="navTab-tab" style="left:0px">
 							<li tabid="main" class="main"><a href="javascript:;"><span><span
-										class="home_icon">推广统计</span></span></a></li>
+										class="home_icon">主页</span></span></a></li>
 						</ul>
 					</div>
 					<div class="tabsLeft">left</div>
@@ -135,7 +145,7 @@ $(function(){
 					<div class="tabsMore">more</div>
 				</div>
 				<ul class="tabsMoreList">
-					<li><a href="javascript:;">推广统计</a></li>
+					<li><a href="javascript:;">主页</a></li>
 				</ul>
 				<div style="height: 767px;" class="navTab-panel tabsPageContent layoutBox">
 					<div style="display: block;" class="page unitBox">

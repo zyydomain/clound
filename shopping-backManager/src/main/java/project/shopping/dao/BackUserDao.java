@@ -1,6 +1,10 @@
 package project.shopping.dao;
 
+import java.util.Map;
+
 import org.springframework.stereotype.Repository;
+
+import project.shopping.pojo.BackUser;
 
 /**
  * 后台用户dao层
@@ -11,4 +15,17 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BackUserDao {
 
+	/**
+	 * 通过用户名查找
+	 * 
+	 * @return
+	 */
+	public BackUser findByAccount(Map<String, Object> params);
+
+	/**
+	 * 主键查找
+	 * 
+	 * @return
+	 */
+	public BackUser findByPrimaryKey(Integer id);
 }

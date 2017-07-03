@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="project.shopping.dao.BackModuleDao">
+	<resultMap id="BaseResultMap" type="project.shopping.pojo.BackModule">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="module_name" property="moduleName" jdbcType="VARCHAR" />
+		<result column="module_url" property="moduleUrl" jdbcType="VARCHAR" />
+		<result column="module_describe" property="moduleDescribe" jdbcType="VARCHAR" />
+		<result column="module_style" property="moduleStyle" jdbcType="VARCHAR" />
+		<result column="module_sequence" property="moduleSequence" jdbcType="INTEGER" />
+		<result column="module_view" property="moduleView" jdbcType="INTEGER" />
+		<result column="module_parent_id" property="moduleParentId" jdbcType="INTEGER" />
+	</resultMap>
+	<!-- 查询所有菜单树 -->
+	<select id="findAllModuleTree" resultType="project.shopping.pojo.BackTree">
+		select 
+			rm.id ,
+			rm.module_name as title,
+			rm.module_parent_id as pid,
+			rm.module_url as url
+			from tb_back_module rm 
+			where rm.module_view = 1
+			ORDER BY rm.module_sequence
+	</select>
+	<!--	根据父节点获得超级管理员的所有菜单-->
+	<select id="findAllModule" resultMap="BaseResultMap" parameterType="Map">
+			select * from tb_back_module rm 
+			where rm.module_view = 1
+			and rm.module_parent_id=#{parentId}
+			ORDER BY rm.module_sequence
+	</select>
+	<!--	根据父节点获得超级管理员的所有菜单总数-->
+	<select id="findModuleCount" resultType="Integer" parameterType="Map">
+			select count(1)  
+			from tb_back_module rm 
+			where rm.module_view = 1
+			and rm.module_parent_id=#{myId}
+	</select>
+	<!-- 添加 -->
+	<insert id="insert" parameterType="project.shopping.pojo.BackModule">
+		insert tb_back_module  
+			(module_name,module_url,module_style,module_describe,module_sequence,module_parent_id)
+		values (#{moduleName},#{moduleUrl},#{moduleStyle},#{moduleDescribe},#{moduleSequence},#{moduleParentId})
+	</insert>
+	<!-- id查找 -->
+	<select id="findById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select * from tb_back_module where id =#{id}
+	</select>
+	<!-- 根据ID更新 -->
+	<update id="updateById" parameterType="project.shopping.pojo.BackModule">
+		update back_module  
+		<set>
+			<if test="moduleName != null and moduleName != ''">
+				module_name = #{moduleName}, 
+			</if>
+			<if test="moduleUrl != null and moduleUrl !=''">
+				module_url = #{moduleUrl},
+			</if>
+			<if test="moduleStyle != null and moduleStyle != ''">
+				module_style = #{moduleStyle}, 
+			</if>
+			<if test="moduleDescribe != null and moduleDescribe != ''">
+				module_describe = #{moduleDescribe}, 
+			</if>
+			<if test="moduleSequence != null and moduleSequence != ''">
+				module_sequence = #{moduleSequence}, 
+			</if>
+			<if test="moduleView != null and moduleView != ''">
+				module_view = #{moduleView},
+			</if>
+			<if test="moduleParentId != null and moduleParentId != ''">
+				module_parent_id = #{moduleParentId},
+			</if>
+		</set>
+		where id = #{id}
+	</update>
+	<!-- 删除 -->
+	<delete id="deleteById" parameterType="java.lang.Integer">
+		delete from tb_back_moudle where id = #{id}
+	</delete>
+</mapper>

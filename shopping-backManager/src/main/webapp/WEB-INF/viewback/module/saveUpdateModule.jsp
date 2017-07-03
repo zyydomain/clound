@@ -37,15 +37,26 @@
 						<label>排序:</label>
 						<input name="moduleSequence"  type="text" alt="请输入排序值" size="20" value="${backModule.moduleSequence }" />
 					</p>
+					<div class="divider"></div>
 					<p>
 						<label>样式:</label>
 						<input name="moduleStyle" style="width: 400px;"  type="text" alt="请输入该菜单的打开方式、宽高等样式"  value='${backModule.moduleStyle }' />
 					</p>
 					<div class="divider"></div>
+					<p>
+						<label>显示:</label>
+						<c:if test="${module.moduleView==1 }">
+							<input name="moduleView"  checked="checked" type="radio" value="1" />启用&nbsp;&nbsp;&nbsp;&nbsp;<input name="moduleView" value="0"  type="radio" />禁用
+						</c:if>
+						<c:if test="${module.moduleView==0 }">
+							<input name="moduleView"   type="radio" value="1" />启用&nbsp;&nbsp;&nbsp;&nbsp;<input name="moduleView" value="0" checked="checked" type="radio" />禁用
+						</c:if>
+					</p>
+					<div class="divider"></div>
 					<p><label>上级菜单:</label>
 						<input value="${parentModule.id }" type="hidden" name="district.id"/>
 						<input class="textInput readonly" value="${parentModule.moduleName }" name="district.districtName" type="text" readonly="readonly" />
-						<a class="btnLook" href="module/showRightList" width="280" height="470" lookupgroup="district">上级菜单</a>	
+						<a class="btnLook" href="module/showRightList.shop" width="280" height="470" lookupgroup="district">上级菜单</a>	
 					</p>
 					<div class="divider"></div>
 					<p>

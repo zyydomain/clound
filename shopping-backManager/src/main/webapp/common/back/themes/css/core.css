@@ -233,7 +233,7 @@ a:hover {text-decoration:underline;}
 .panel .grid { border-style:solid; border-width:0 1px;}
 .panel .panelBar { border-width:1px;}
 
-.panelBar { display:block; overflow:hidden; border-style:solid; border-width:1px 0; background-repeat:repeat-x; }
+.panelBar { display:block; overflow:hidden; height:25px; border-style:solid; border-width:1px 0; background-repeat:repeat-x; }
 
 .panelBar ul { padding:1px;}
 .panelBar li { float:left; display:block; overflow:hidden; height:23px; padding:0 0 0 5px;}
@@ -426,7 +426,7 @@ body { overflow:hidden;}
 #splitBarProxy { display:none; overflow:hidden; width:3px; border-style:solid; border-width:1px; cursor:col-resize; position:absolute; top:55px; left:205px; z-index:20;}
 #footer {position:absolute; bottom:0; left:0; text-align:center; width:100%; height:21px; padding:0 5px;z-index:-1}
 
-#header .headerNav { height:/* 50 */px; background-repeat:no-repeat; background-position:100% -50px;}/* 新修改首页 */
+#header .headerNav { height:50px; background-repeat:no-repeat; background-position:100% -50px;}
 #header .logo { float:left; width:250px; height:50px; text-indent:-1000px;}
 
 #header .nav { display:block; height:21px; position:absolute; top:8px; right:0; z-index:31;}
@@ -514,7 +514,7 @@ body { overflow:hidden;}
 .pageFormContent dd.pfc {display:block;line-height:30px;width:50%;float:left; background:#e9e9e9; font-size:18px;}
 #xxtj{ display:block;width:10%; background:#f6f6f6; color:#666; text-align:center;line-height:30px;font-size:18px;}
 .pageFormContent dl.nowrap, .nowrap dl{width:100%; height:auto; clear: both;}
-.pageFormContent dl.nowrap dd, .nowrap dd {width: 60%;}
+.pageFormContent dl.nowrap dd, .nowrap dd {width: 560px;}
 
 fieldset {padding:10px; margin:0 0 5px 0; border:1px solid #e4e4e4; border-radius:3px;}
 fieldset legend {

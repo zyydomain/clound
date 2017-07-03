@@ -1,1 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="project.shopping.dao.BackUserDao">
+	<resultMap id="BaseResultMap" type="project.shopping.pojo.BackUser">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="user_account" property="userAccount" jdbcType="VARCHAR" />
+		<result column="user_password" property="userPassword" jdbcType="VARCHAR" />
+		<result column="type" property="type" jdbcType="INTEGER" />
+		<result column="user_phone" property="userPhone" jdbcType="VARCHAR" />
+		<result column="user_realname" property="userRealName" jdbcType="VARCHAR" />
+		<result column="user_card_type" property="userCardType" jdbcType="VARCHAR" />
+		<result column="user_card_numble" property="userCardNumble" jdbcType="VARCHAR" />
+		<result column="card_front_img" property="cardFrontImg" jdbcType="VARCHAR" />
+		<result column="card_backImg" property="cardBackImg" jdbcType="VARCHAR" />
+		<result column="user_email" property="userEmail" jdbcType="VARCHAR" />
+		<result column="email_status" property="emailStatus" jdbcType="INTEGER" />
+		<result column="realname_status" property="realNameStatus" jdbcType="INTEGER" />
+		<result column="user_qq" property="qq" jdbcType="VARCHAR" />
+		<result column="user_sex" property="sex" jdbcType="INTEGER" />
+		<result column="user_area_id" property="userAreaId" jdbcType="INTEGER" />
+		<result column="user_address" property="userAddress" jdbcType="VARCHAR" />
+		<result column="user_addtime" property="userAddTime" jdbcType="TIMESTAMP" />
+		<result column="is_black" property="isBlack" jdbcType="INTEGER" />
+		<result column="is_lock" property="isLock" jdbcType="INTEGER" />
+		<result column="user_addip" property="userAddIp" jdbcType="VARCHAR" />
+	</resultMap>
+	<!-- 通过用户名查找 -->
+	<select id="findByAccount" resultMap="BaseResultMap" parameterType="Map">
+		SELECT bu.* from tb_back_user bu where user_account = #{userAccount}
+	</select>
+	<!-- 主键查找 -->
+	<select id="findByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		SELECT * from tb_back_user where id = #{id}
+	</select>
+</mapper>
