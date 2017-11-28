@@ -15,8 +15,9 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
+//加载数据源配置
 @EnableConfigurationProperties(DataSourceProperties.class)
-//mybaits dao 搜索路径
+//mybaits dao 扫描路径
 @MapperScan("cloud.simple.service.dao")
 public class MybatisDataSource {
 	@Autowired

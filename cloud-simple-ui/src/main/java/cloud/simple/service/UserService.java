@@ -24,12 +24,16 @@ public class UserService {
 
 	final String SERVICE_NAME = "cloud-simple-service";
 
+	/**
+	 * 断路器的基本作用就是@HystrixCommand注解的方法失败后，系统将自动切换到fallbackMethod方法执行。断路器Hystrix具备回退机制、请求缓存和请求打包以及监控和配置等功能，
+	 * 在这里我们只是使用了它的核心功能：回退机制，使用该功能允许你快速失败并迅速恢复或者回退并优雅降级
+	 * @return
+	 */
 	@SuppressWarnings("unchecked")
 	@HystrixCommand(fallbackMethod = "fallbackSearchAll")
 	public List<User> readUserInfo() {
 		List<User> list = restTemplate.getForObject("http://" + SERVICE_NAME + "/user", List.class);
 		return list;
-		// return feignUserService.readUserInfo();
 	}
 
 	@SuppressWarnings("unused")

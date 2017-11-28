@@ -1,12 +1,17 @@
 package cloud.simple.service.conf;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-
+/**
+ * 数据源
+ * @author zhouyuyou
+ * 2017年11月28日
+ */
 @ConfigurationProperties(prefix = DataSourceProperties.DS, ignoreUnknownFields = false)
 public class DataSourceProperties {
 
-	// 对应配置文件里的配置键
+	// 对应配置文件里的配置的前缀
 	public final static String DS = "mysqldb.datasource";
+	//mysql驱动
 	private String driverClassName = "com.mysql.jdbc.Driver";
 
 	private String url;
